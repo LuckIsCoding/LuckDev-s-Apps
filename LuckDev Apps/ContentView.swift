@@ -117,7 +117,33 @@ A simple game where you're told how long to hold a button, and you have to see h
                         .padding()
                         .background(Color.gray.opacity(0.3))
                         .cornerRadius(30)
+                        .padding(.horizontal)
+                        .padding(3)
+                }
+                
+                Button {
+                    UIApplication.shared.open(URL(string: "https://github.com/luckduracell")!)
+                } label: {
+                    HStack {
+                        ZStack {
+                            Circle()
+                                .frame(width: 28, height: 28, alignment: .center)
+                                .foregroundColor(.white)
+                            Image(systemName: "person.circle.fill")
+                                .resizable().frame(width: 30, height: 30, alignment: .center)
+                        }
+                        Text("My GitHub")
+                            .foregroundColor(.primary)
+                        Spacer()
+                        Image(systemName: "chevron.right")
+                            .resizable()
+                            .frame(width: 8, height: 13, alignment: .center)
+                            .foregroundColor(.gray)
+                    }
                         .padding()
+                        .background(Color.gray.opacity(0.3))
+                        .cornerRadius(30)
+                        .padding(.horizontal)
                 }
                 
             } .sheet(isPresented: $showSheet, onDismiss: {
